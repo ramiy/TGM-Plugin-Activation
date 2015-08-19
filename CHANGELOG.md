@@ -1,13 +1,18 @@
 # Changelog for TGM Plugin Activation library
 
+## Trunk (unreleased)
+* Continue to allow having the 'install plugins page' outside of the Theme submenu without Theme Check reporting it. [#460]
+* Fixed bug where actions links on the WP native plugins page would not be filtered. [#459]
+
+
 ## 2.5.2 (2015-07-15)
-* Hot Fix: fixes potential `Fatal error: Call to protected TGM_Plugin_Activation::__construct()` error and other compatibility issues when both TGMPA 2.5+ as well as TGMPA 2.3.6- would be loaded by different themes and plugins.
+* Hot Fix: fixes potential `Fatal error: Call to protected TGM_Plugin_Activation::__construct()` error and other compatibility issues when both TGMPA 2.5+ as well as TGMPA 2.3.6- would be loaded by different themes and plugins. [#449]
 
 Take note: We do **NOT** support 2.3.6 anymore and **_highly_** discourage its use. Any themes and plugins still using TGMPA 2.3.6 or less should upgrade as soon as possible. All the same, the end-user should not be confronted with white screens because of it, so this hot fix should prevent just that.
 
 ## 2.5.1 (2015-07-13)
 
-* Hot Fix: fixes potential `Fatal error: Call to undefined method TGM_Utils::validate_bool()` errors caused by a conflict with the Soliloquy plugin.
+* Hot Fix: fixes potential `Fatal error: Call to undefined method TGM_Utils::validate_bool()` errors caused by a conflict with the Soliloquy plugin. [#446]
 
 ## 2.5.0 (2015-07-03)
 
@@ -67,6 +72,7 @@ TGMPA will start providing localized text strings soon. If you already have tran
 * **Miscellaneous fixes**:
   - Leaner loading: TGMPA actions will now only be hooked in and run on the back-end (`is_admin() returns true`).  [#357] Also most TGMPA actions will now only be hooked in if there's actually something to do for TGMPA. [#381]
   - Fixed: _"Undefined index: skin_update_failed_error"_ [#260], [#240] Thanks [Parhum Khoshbakht] and [Sandeep] for reporting.
+  - Fixed: Installation of bundled plugins with uppercase letters in the plugin slug would fail. [#401], [#403] Thanks [steveboj] for reporting.
   - Made admin URLs environment aware by using `self_admin_url()` instead of `admin_url()` or `network_admin_url()`. [#255], [#171]
   - Fixed: the Adminbar would be loaded twice causing conflicts (with other plugins). [#208] Props [John Blackbourn].
   - All TGMPA generated pages will now show the version number on the page to assist in debugging. [#399], [#402]
@@ -94,7 +100,7 @@ TGMPA will start providing localized text strings soon. If you already have tran
      * [#284], [#281] - props [Ninos Ego],
      * [#286] - props [krishna19],
      * [#178], [#180], [#182], [#183] - thanks [Gregory Karpinsky] for reporting,
-     * [#324], [#325], [#331], [#346], [#356], [#357], [#358], [#359], [#360], [#361], [#362], [#363], [#368], [#371], [#373], [#374], [#375], [#376], [#381], [#385], [#387], [#395], [#397]
+     * [#324], [#325], [#331], [#346], [#356], [#357], [#358], [#359], [#360], [#361], [#362], [#363], [#368], [#371], [#373], [#374], [#375], [#376], [#381], [#385], [#387], [#395], [#397], [#425], [#426], [#427], [#435]
   - Allow for extending of the TGMPA class and fixed issues with PHP 5.2 [#303] which were originally caused by this.
   - Tighten the file permissions on our files. [#322]
   - Cleaned up some of the documentation. [#179], [#384] Props [Gregory Karpinsky] and the TGMPA team.
@@ -274,6 +280,7 @@ TGMPA will start providing localized text strings soon. If you already have tran
 [pavot]: https://github.com/pavot
 [Chris Howard]: https://github.com/qwertydude
 [Shiva Poudel]: https://github.com/shivapoudel
+[steveboj]: https://github.com/steveboj
 [swiderski]: https://github.com/swiderski
 [tanshcreative]: https://github.com/tanshcreative
 [Tim Nicholson]: https://github.com/timnicholson
@@ -286,7 +293,17 @@ TGMPA will start providing localized text strings soon. If you already have tran
 [Christian]: http://themeforest.net/user/artless
 
 
+[#460]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/460
+[#459]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/459
+[#449]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/449
+[#446]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/446
+[#435]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/435
+[#427]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/427
+[#426]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/426
+[#425]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/425
+[#403]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/403
 [#402]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/402
+[#401]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/401
 [#399]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/399
 [#397]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/397
 [#395]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/395
