@@ -3,6 +3,9 @@
 ## Trunk (unreleased)
 * Continue to allow having the 'install plugins page' outside of the Theme submenu without Theme Check reporting it. [#460]
 * Fixed bug where actions links on the WP native plugins page would not be filtered. [#459]
+* Fixed bug where TGMPA when included with a plugin would be recognized as the plugin instead of the *real* plugin. [#499], [#500]
+* Added translations for Brazilian Portuguese and French [#450], [#465] with grateful thanks to [Elvis Henrique Pereira] and [Hedi Chaibi].
+* Regenerated .pot file.
 
 
 ## 2.5.2 (2015-07-15)
@@ -263,9 +266,11 @@ TGMPA will start providing localized text strings soon. If you already have tran
 [Dan Fisher]: https://github.com/danfisher85
 [djcowan]: https://github.com/djcowan
 [Jason Xie]: https://github.com/duckzland
+[Elvis Henrique Pereira]: https://github.com/elvishp2006
 [Franklin Gitonga]: https://github.com/FrankM1
 [Gary Jones]: https://github.com/GaryJones
 [hamdan-mahran]: https://github.com/hamdan-mahran
+[Hedi Chaibi]: https://github.com/hedii
 [Sandeep]: https://github.com/InsertCart
 [Jeff Sebring]: https://github.com/jeffsebring
 [John Blackbourn]: https://github.com/johnbillion
@@ -293,8 +298,12 @@ TGMPA will start providing localized text strings soon. If you already have tran
 [Christian]: http://themeforest.net/user/artless
 
 
+[#500]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/500
+[#499]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/499
+[#465]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/465
 [#460]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/460
 [#459]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/459
+[#450]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/450
 [#449]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/449
 [#446]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/446
 [#435]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/435
