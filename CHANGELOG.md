@@ -1,9 +1,11 @@
 # Changelog for TGM Plugin Activation library
 
 ## Trunk (unreleased)
-* Continue to allow having the 'install plugins page' outside of the Theme submenu without Theme Check reporting it. [#460]
+* Fixed a - minor/low-impact - security vulnerability. Thanks [Mohamed A. Baset] for reporting. If *you* find a security vulnerability, please disclose responsibly! [#487], [#505]
 * Fixed bug where actions links on the WP native plugins page would not be filtered. [#459]
-* Fixed bug where TGMPA when included with a plugin would be recognized as the plugin instead of the *real* plugin. [#499], [#500]
+* Fixed bug where TGMPA when included within a plugin would be recognized as the plugin instead of the *real* plugin. Thanks [weavertheme] for reporting. [#499], [#500]
+* Prevent an install error when trying to bulk-install an already installed plugin. Thanks [Ahmad Awais] for reporting. [#496], [#504]
+* Updated example file to show different ways how the TGMPA class can be included. Props [Emil Uzelac] for the suggestion. [#469], [#503]
 * Added translations for Brazilian Portuguese and French [#450], [#465] with grateful thanks to [Elvis Henrique Pereira] and [Hedi Chaibi].
 * Regenerated .pot file.
 
@@ -261,12 +263,14 @@ TGMPA will start providing localized text strings soon. If you already have tran
 [.pot file]: https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/languages/
 
 
+[Ahmad Awais]: https://github.com/ahmadawais
 [Christian Foellmann]: https://github.com/cfoellmann
 [Chris Talkington]: https://github.com/ctalkington
 [Dan Fisher]: https://github.com/danfisher85
 [djcowan]: https://github.com/djcowan
 [Jason Xie]: https://github.com/duckzland
 [Elvis Henrique Pereira]: https://github.com/elvishp2006
+[Emil Uzelac]: https://github.com/emiluzelac
 [Franklin Gitonga]: https://github.com/FrankM1
 [Gary Jones]: https://github.com/GaryJones
 [hamdan-mahran]: https://github.com/hamdan-mahran
@@ -279,6 +283,7 @@ TGMPA will start providing localized text strings soon. If you already have tran
 [krishna19]: https://github.com/krishna19
 [Luis Martins]: https://github.com/lmartins
 [manake]: https://github.com/manake
+[Mohamed A. Baset]: https://github.com/SymbianSyMoh
 [Nate Wright]: https://github.com/NateWr
 [Ninos Ego]: https://github.com/Ninos
 [Parhum Khoshbakht]: https://github.com/parhumm
@@ -292,14 +297,20 @@ TGMPA will start providing localized text strings soon. If you already have tran
 [Thomas Griffin]: https://github.com/thomasgriffin
 [Gregory Karpinsky]: https://github.com/tivnet
 [Travis Smith]: https://github.com/wpsmith
+[weavertheme]: https://github.com/weavertheme
 [Zack Katz]: https://github.com/zackkatz
 
 [Zauan/Hogash Studio]: http://pastebin.com/u/Zauan
 [Christian]: http://themeforest.net/user/artless
 
-
+[#505]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/505
+[#504]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/504
+[#503]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/503
 [#500]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/500
 [#499]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/499
+[#496]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/496
+[#487]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/487
+[#469]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/469
 [#465]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/465
 [#460]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/460
 [#459]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/459
