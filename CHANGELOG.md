@@ -1,11 +1,14 @@
 # Changelog for TGM Plugin Activation library
 
 ## Trunk (unreleased)
-* Fixed a - minor/low-impact - security vulnerability. Thanks [Mohamed A. Baset] for reporting. If *you* find a security vulnerability, please disclose responsibly! [#487], [#505]
-* Fixed bug where actions links on the WP native plugins page would not be filtered. [#459]
-* Fixed bug where TGMPA when included within a plugin would be recognized as the plugin instead of the *real* plugin. Thanks [weavertheme] for reporting. [#499], [#500]
-* Prevent an install error when trying to bulk-install an already installed plugin. Thanks [Ahmad Awais] for reporting. [#496], [#504]
-* Updated example file to show different ways how the TGMPA class can be included. Props [Emil Uzelac] for the suggestion. [#469], [#503]
+* Fixed: Minor/low-impact - security vulnerability. Thanks [Mohamed A. Baset] for reporting. If *you* find a security vulnerability, please disclose responsibly! [#487], [#505]
+* Fixed: A bug where actions links on the WP native plugins page would not be filtered. [#458], [#459]
+* Fixed: A bug where TGMPA when included within a plugin would be recognized as the plugin instead of the *real* plugin. Thanks [weavertheme] for reporting. [#499], [#500]
+* Fixed: An install error when trying to bulk-install an already installed plugin. Thanks [Ahmad Awais] for reporting. [#496], [#504]
+* Fixed: An update error when trying to bulk-update a plugin which is not installed. Thanks [Gary Jones] for reporting. [#442], [#508]
+* Fixed: Admin notices display class. Props [Ninos Ego] and [Primoz Cigler]. [#478], [#495], [#509]
+* Enhancement: The full admin notice is now only displayed to users who can install/update/activate plugins. A limited _"Contact the site admin."_ notice is shown to select users if it pertains to _required_ plugins. The selection of which users get to see this last message is based on the `publish_posts` (=Author) capability. This capability is however filterable using the new `tgmpa_show_admin_notice_capability` filter. Thanks [Stanislav Khromov], [Gary Jones], [Mickey Kay], [Ollie Treend] for suggesting. [#190], [#414], [#489], [#507]
+* Enhancement: The example file now shows examples of different ways for including TGMPA based on the context in which you are using it. Props [Emil Uzelac] for the suggestion. [#469], [#503]
 * Added translations for Brazilian Portuguese and French [#450], [#465] with grateful thanks to [Elvis Henrique Pereira] and [Hedi Chaibi].
 * Regenerated .pot file.
 
@@ -279,15 +282,19 @@ TGMPA will start providing localized text strings soon. If you already have tran
 [Jeff Sebring]: https://github.com/jeffsebring
 [John Blackbourn]: https://github.com/johnbillion
 [Juliette Reinders Folmer]: https://github.com/jrfnl
+[Stanislav Khromov]: https://github.com/khromov
 [Yakir Sitbon]: https://github.com/KingYes
 [krishna19]: https://github.com/krishna19
 [Luis Martins]: https://github.com/lmartins
 [manake]: https://github.com/manake
+[Mickey Kay]: https://github.com/MickeyKay
 [Mohamed A. Baset]: https://github.com/SymbianSyMoh
 [Nate Wright]: https://github.com/NateWr
 [Ninos Ego]: https://github.com/Ninos
+[Ollie Treend]: https://github.com/ollietreend
 [Parhum Khoshbakht]: https://github.com/parhumm
 [pavot]: https://github.com/pavot
+[Primoz Cigler]: https://github.com/primozcigler
 [Chris Howard]: https://github.com/qwertydude
 [Shiva Poudel]: https://github.com/shivapoudel
 [steveboj]: https://github.com/steveboj
@@ -303,24 +310,34 @@ TGMPA will start providing localized text strings soon. If you already have tran
 [Zauan/Hogash Studio]: http://pastebin.com/u/Zauan
 [Christian]: http://themeforest.net/user/artless
 
+
+[#509]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/509
+[#508]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/508
+[#507]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/507
 [#505]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/505
 [#504]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/504
 [#503]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/503
 [#500]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/500
 [#499]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/499
 [#496]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/496
+[#495]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/495
+[#489]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/489
 [#487]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/487
+[#478]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/478
 [#469]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/469
 [#465]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/465
 [#460]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/460
 [#459]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/459
+[#458]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/458
 [#450]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/450
 [#449]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/449
 [#446]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/446
+[#442]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/442
 [#435]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/435
 [#427]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/427
 [#426]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/426
 [#425]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/425
+[#414]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/414
 [#403]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/403
 [#402]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/402
 [#401]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/401
@@ -393,6 +410,7 @@ TGMPA will start providing localized text strings soon. If you already have tran
 [#203]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/203
 [#197]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/197
 [#192]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/192
+[#190]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/190
 [#188]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/188
 [#185]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/185
 [#183]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/183
