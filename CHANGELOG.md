@@ -10,7 +10,7 @@
 * Fixed: Installed/updated notices on bulk install/update were all being displayed at the top of the page instead of inline. [#510], [#511]
 * Enhancement: The full admin notice is now only displayed to users who can install/update/activate plugins. A limited _"Contact the site admin."_ notice is shown to select users if it pertains to _required_ plugins. The selection of which users get to see this last message is based on the `publish_posts` (=Author) capability. This capability is however filterable using the new `tgmpa_show_admin_notice_capability` filter. Thanks [Stanislav Khromov], [Gary Jones], [Mickey Kay], [Ollie Treend] for suggesting. [#190], [#414], [#489], [#507]
 * Enhancement: The example file now shows examples of different ways for including TGMPA based on the context in which you are using it. Props [Emil Uzelac] for the suggestion. [#469], [#503]
-* Various other minor improvements and keeping things in line with WP core. [#512], [#513]
+* Various other minor improvements and keeping things in line with WP core. [#512], [#513], [#514]
 * Added translations for Brazilian Portuguese and French [#450], [#465] with grateful thanks to [Elvis Henrique Pereira] and [Hedi Chaibi].
 * Regenerated .pot file.
 
@@ -313,6 +313,7 @@ TGMPA will start providing localized text strings soon. If you already have tran
 [Christian]: http://themeforest.net/user/artless
 
 
+[#514]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/514
 [#513]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/513
 [#512]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/512
 [#511]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/511
