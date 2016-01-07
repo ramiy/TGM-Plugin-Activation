@@ -1,14 +1,16 @@
 # Changelog for TGM Plugin Activation library
 
-## Trunk (unreleased)
+## 2.6.0 (unreleased)
 * Fixed: Minor/low-impact - security vulnerability. Thanks [Mohamed A. Baset] for reporting. If *you* find a security vulnerability, please disclose responsibly! [#487], [#505]
 * Fixed: A bug where actions links on the WP native plugins page would not be filtered. [#458], [#459]
 * Fixed: A bug where TGMPA when included within a plugin would be recognized as the plugin instead of the *real* plugin. Thanks [weavertheme] for reporting. [#499], [#500]
 * Fixed: An install error when trying to bulk-install an already installed plugin. Thanks [Ahmad Awais] for reporting. [#496], [#504]
 * Fixed: An update error when trying to bulk-update a plugin which is not installed. Thanks [Gary Jones] for reporting. [#442], [#508]
 * Fixed: Admin notices display class. Props [Ninos Ego] and [Primoz Cigler]. [#478], [#495], [#509]
+* Fixed: Installed/updated notices on bulk install/update were all being displayed at the top of the page instead of inline. [#510], [#511]
 * Enhancement: The full admin notice is now only displayed to users who can install/update/activate plugins. A limited _"Contact the site admin."_ notice is shown to select users if it pertains to _required_ plugins. The selection of which users get to see this last message is based on the `publish_posts` (=Author) capability. This capability is however filterable using the new `tgmpa_show_admin_notice_capability` filter. Thanks [Stanislav Khromov], [Gary Jones], [Mickey Kay], [Ollie Treend] for suggesting. [#190], [#414], [#489], [#507]
 * Enhancement: The example file now shows examples of different ways for including TGMPA based on the context in which you are using it. Props [Emil Uzelac] for the suggestion. [#469], [#503]
+* Various other minor improvements and keeping things in line with WP core. [#512], [#513]
 * Added translations for Brazilian Portuguese and French [#450], [#465] with grateful thanks to [Elvis Henrique Pereira] and [Hedi Chaibi].
 * Regenerated .pot file.
 
@@ -311,6 +313,10 @@ TGMPA will start providing localized text strings soon. If you already have tran
 [Christian]: http://themeforest.net/user/artless
 
 
+[#513]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/513
+[#512]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/512
+[#511]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/511
+[#510]: https://github.com/TGMPA/TGM-Plugin-Activation/issues/510
 [#509]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/509
 [#508]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/508
 [#507]: https://github.com/TGMPA/TGM-Plugin-Activation/pull/507
