@@ -8,7 +8,7 @@
  * or theme author for support.
  *
  * @package   TGM-Plugin-Activation
- * @version   2.5.2
+ * @version   2.6.0
  * @link      http://tgmpluginactivation.com/
  * @author    Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright Copyright (c) 2011, Thomas Griffin
@@ -55,7 +55,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 *
 		 * @const string Version number.
 		 */
-		const TGMPA_VERSION = '2.5.2';
+		const TGMPA_VERSION = '2.6.0';
 
 		/**
 		 * Regular expression to test if a URL is a WP plugin repo URL.
@@ -1129,7 +1129,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		/**
 		 * Generate the user action links for the admin notice.
 		 *
-		 * @since 2.x.x
+		 * @since 2.6.0
 		 *
 		 * @param int $install_link_count  Number of plugins to install.
 		 * @param int $update_link_count   Number of plugins to update.
@@ -1191,7 +1191,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 * Work around all the changes to the various admin notice classes between WP 4.4 and 3.7
 		 * (lowest supported version by TGMPA).
 		 *
-		 * @since 2.x.x
+		 * @since 2.6.0
 		 *
 		 * @return string
 		 */
@@ -1723,7 +1723,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 * Check to see if the plugin is 'updatetable', i.e. installed, with an update available
 		 * and no WP version requirements blocking it.
 		 *
-		 * @since 2.x.x
+		 * @since 2.6.0
 		 *
 		 * @param string $slug Plugin slug.
 		 * @return bool True if OK to proceed with update, false otherwise.
