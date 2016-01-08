@@ -1,6 +1,12 @@
 # Changelog for TGM Plugin Activation library
 
 ## 2.6.0 (unreleased)
+
+Since a few weeks, we offer a _"Custom TGMPA Generator"_. From now on, that is the preferred way for downloading your copy of TGMPA for use in a theme or plugin.
+If you download TGMPA using the _Custom TGMPA Generator_ and indicate that it is for a theme which will be published on wordpress.org, you will receive a copy which will pass the Theme Check review.
+
+You can find the _Custom TGMPA Generator_ on the [download] page of the website. For more information, read the [related blog post].
+
 * Fixed: Minor/low-impact - security vulnerability. Thanks [Mohamed A. Baset] for reporting. If *you* find a security vulnerability, please disclose responsibly! [#487], [#505]
 * Fixed: A bug where actions links on the WP native plugins page would not be filtered. [#458], [#459]
 * Fixed: A bug where TGMPA when included within a plugin would be recognized as the plugin instead of the *real* plugin. Thanks [weavertheme] for reporting. [#499], [#500]
@@ -11,7 +17,7 @@
 * Enhancement: The full admin notice is now only displayed to users who can install/update/activate plugins. A limited _"Contact the site admin."_ notice is shown to select users if it pertains to _required_ plugins. The selection of which users get to see this last message is based on the `publish_posts` (=Author) capability. This capability is however filterable using the new `tgmpa_show_admin_notice_capability` filter. Thanks [Stanislav Khromov], [Gary Jones], [Mickey Kay], [Ollie Treend] for suggesting. [#190], [#414], [#489], [#507]
 * Enhancement: The example file now shows examples of different ways for including TGMPA based on the context in which you are using it. Props [Emil Uzelac] for the suggestion. [#469], [#503]
 * Various other minor improvements and keeping things in line with WP core. [#512], [#513], [#514]
-* Added translations for Brazilian Portuguese and French [#450], [#465] with grateful thanks to [Elvis Henrique Pereira] and [Hedi Chaibi].
+* Added load_textdomain calls [#     XXX    ] and translations for Brazilian Portuguese and French [#450], [#465] with grateful thanks to [Elvis Henrique Pereira] and [Hedi Chaibi].
 * Regenerated .pot file.
 
 
@@ -263,7 +269,8 @@ TGMPA will start providing localized text strings soon. If you already have tran
 * Initial release into the wild
 
 
-
+[download]: http://tgmpluginactivation.com/download/
+[related blog post]: http://tgmpluginactivation.com/news/custom-tgmpa-generator/
 [TGMPA/TGM-Plugin-Activation]: https://github.com/TGMPA/TGM-Plugin-Activation
 [.pot file]: https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/languages/
 
