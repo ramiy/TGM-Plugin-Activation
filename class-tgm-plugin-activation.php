@@ -260,6 +260,15 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			// Announce that the class is ready, and pass the object (for advanced use).
 			do_action_ref_array( 'tgmpa_init', array( $this ) );
 
+			/*
+			 * Load our text domain and allow for overloading the fall-back file.
+			 *
+			 * {@internal IMPORTANT! If this code changes, review the regex in the custom TGMPA
+			 * generator on the website.}}
+			 */
+			add_action( 'init', array( $this, 'load_textdomain' ), 5 );
+			add_filter( 'load_textdomain_mofile', array( $this, 'overload_textdomain_mofile' ), 10, 2 );
+
 			// When the rest of WP has loaded, kick-start the rest of the class.
 			add_action( 'init', array( $this, 'init' ) );
 		}
@@ -427,6 +436,58 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			// Setup the force deactivation hook.
 			if ( true === $this->has_forced_deactivation ) {
 				add_action( 'switch_theme', array( $this, 'force_deactivation' ) );
+			}
+		}
+
+		/**
+		 * Load translations.
+		 *
+		 * @since 2.x.x
+		 *
+		 * @internal Uses `load_theme_textdomain()` rather than `load_plugin_textdomain()` to
+		 * get round the different ways of handling the path and deprecated notices being thrown
+		 * and such. The way the call is made now it will load local translation files
+		 * correctly independent of whether the library is included in a plugin or in a theme.
+		 *
+		 * {@internal IMPORTANT! If this function changes, review the regex in the custom TGMPA
+		 * generator on the website.}}
+		 */
+		public function load_textdomain() {
+			load_theme_textdomain( 'tgmpa', dirname( __FILE__ ) . '/languages/' );
+		}
+
+		/**
+		 * Potentially overload the fall-back translation file for the current language.
+		 *
+		 * WP, by default since WP 3.7, will load a local translation first and if none
+		 * can be found, will try and find a translation in the /wp-content/languages/ directory.
+		 * As this library is theme/plugin agnostic, translation files for TGMPA can exist both
+		 * in the WP_LANG_DIR /plugins/ subdirectory as well as in the /themes/ subdirectory.
+		 *
+		 * This method makes sure both directories are checked.
+		 *
+		 * {@internal IMPORTANT! If this function changes, review the regex in the custom TGMPA
+		 * generator on the website.}}
+		 *
+		 * @since 2.x.x
+		 *
+		 * @param string $domain The domain for which a language file is being loaded.
+		 * @param string $mofile Full path to the target mofile.
+		 * @return string $mofile
+		 */
+		public function overload_textdomain_mofile( $domain, $mofile ) {
+			// Exit early if not our domain, not a WP_LANG_DIR load or if the file exists and is readable.
+			if ( 'tgmpa' !== $domain || false === strpos( $mofile, WP_LANG_DIR ) || is_readable( $mofile ) ) {
+				return $mofile;
+			}
+
+			// Current fallback file is not valid, let's try the alternative option.
+			if ( strpos( $mofile, '/themes/' ) !== false ) {
+				return str_replace( '/themes/', '/plugins/', $mofile );
+			} elseif ( strpos( $mofile, '/plugins/' ) !== false ) {
+				return str_replace( '/plugins/', '/themes/', $mofile );
+			} else {
+				return $mofile;
 			}
 		}
 
